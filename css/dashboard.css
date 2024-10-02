@@ -1,0 +1,493 @@
+body {
+    font-family: Arial, sans-serif;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    background-color: #f8f8f8;
+    height: 100vh; /* Full viewport height */
+    overflow-y: auto; /* Add vertical scrollbar to body */
+}
+
+.navbar-custom {
+    background-color: white;
+    z-index: 1000; /* Ensure navbar is above other content */
+    position: fixed; /* Make navbar fixed at the top */
+    width: 100%; /* Make navbar full width */
+    top: 0; /* Position it at the top */
+    border: 1px solid #ddd;
+}
+
+.navbar-custom .navbar-brand {
+    color: #FF5722;
+    font-weight: bold;
+}
+
+.navbar-custom .navbar-nav .nav-link {
+    color: #333;
+}
+
+.navbar-custom .form-control {
+    border-radius: 10px;
+}
+
+.navbar-custom .nav-item img {
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+}
+
+.navbar-custom .menu-button,
+.menu-icon .menu-button {
+    color: #333;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+/* Adjust the alignment of the search bar and sort by icon */
+.search-form {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.search-form .input-group {
+    flex-grow: 1;
+    max-width: 300px; /* Adjust the size of the search bar */
+}
+
+.dropdown .btn-secondary {
+    margin-left: 10px;
+    padding: 5px 10px;
+    border-radius: 0; /* Match the search bar's appearance */
+}
+
+.col-12.d-flex.justify-content-between.align-items-center.mb-3 {
+    flex-wrap: wrap;
+}
+
+/* Additional adjustments for responsive design */
+@media (max-width: 768px) {
+    .col-12.d-flex.justify-content-between.align-items-center.mb-3 {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .search-form .input-group {
+        max-width: 100%; /* Allow the search bar to take full width on smaller screens */
+    }
+
+    .dropdown .btn-secondary {
+        margin-top: 10px; /* Add space between search bar and sort button on small screens */
+    }
+
+    .row.card-container {
+        flex-direction: column;
+    }
+
+    .card {
+        width: 100%; /* Make the card full width */
+    }
+}
+
+@media (max-width: 576px) {
+    .main-content h4 {
+        margin-top: 15px;
+        color: #FF5722;
+    }
+
+    .main-content .form {
+        margin-top: 10px;
+    }
+}
+
+.main-content {
+    padding-top: 20px; /* Adjust this value to avoid overflow issues */
+}
+
+@media (min-width: 576px) {
+    .main-content {
+        padding-top: 40px; /* More padding for larger screens */
+}
+}
+
+.input-group .search-form {
+    width: 20%;
+}
+
+@media (max-width: 300px) {
+    .search-form {
+        width: auto;
+        max-width: none;
+    }
+}
+
+.row.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the cards horizontally */
+}
+
+.card {
+    margin: 10px;
+    margin-top: -5px;
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    position: fixed;
+    top: 56px; /* Adjust this to the height of your navbar */
+    height: calc(100vh - 56px); /* Full height minus navbar height */
+    width: 55px; /* Initial width for icons only */
+    left: 0;
+    background-color: #fff;
+    transition: width 0.3s, transform 0.3s ease-in-out;
+    overflow-x: hidden;
+    white-space: nowrap;
+    z-index: 999; /* Ensure sidebar is above other content */
+}
+
+.sidebar.expanded {
+    width: 250px; /* Expanded width */
+}
+
+.sidebar a {
+    padding: 15px;
+    text-align: left;
+    font-size: 18px;
+    display: block;
+    color: #000;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.sidebar a i {
+    min-width: 20px;
+    margin-right: 10px;
+}
+
+.sidebar a span {
+    display: none; /* Hide text initially */
+}
+
+.sidebar.expanded a span {
+    display: inline; /* Show text when expanded */
+}
+
+.sidebar a:hover {
+    background-color: #f1f1f1;
+}
+
+.sidebar .active {
+    background-color: #e7f3f9;
+}
+
+/* Integrated Dropdown Styles */
+.collapse.list-unstyled {
+    padding-left: 20px; /* Indentation for submenu */
+    background-color: #f9f9f9; /* Light background to distinguish from main items */
+    border-left: 2px solid #ddd; /* Optional left border for emphasis */
+}
+
+.collapse.list-unstyled a {
+    padding: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+.collapse.list-unstyled a:hover {
+    background-color: #e7f3f9;
+    color: #000;
+}
+
+/* Main Content Styles */
+.main-content {
+    margin-top: 56px; /* Add margin to push content below navbar */
+    margin-left: 60px; /* Initial margin to account for sidebar */
+    transition: margin-left 0.3s, width 0.3s; /* Smooth transition for margin and width */
+    padding: 20px;
+    width: calc(100% - 60px); /* Full width minus sidebar */
+    overflow: hidden; /* Prevent horizontal overflow */
+}
+
+.main-content.shifted {
+    margin-left: 250px; /* Margin when sidebar is expanded */
+    width: calc(100% - 250px); /* Adjust width when sidebar is expanded */
+}
+
+/* Sidebar hidden by default on mobile */
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%); /* Hide sidebar off-screen */
+        transition: transform 0.3s ease; /* Smooth transition for sidebar */
+    }
+
+    /* Sidebar will appear when toggled */
+    .sidebar.show {
+        transform: translateX(0); /* Bring sidebar into view */
+    }
+
+    .main-content {
+        margin-left: 0; /* Remove margin when sidebar is hidden */
+        width: 100%; /* Make the content take full width */
+    }
+}
+
+/* Button to toggle sidebar */
+.menu-button {
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: #333;
+    cursor: pointer;
+}
+
+/* Card Styles */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the cards horizontally */
+}
+
+.card {
+    margin: 10px;
+    margin-top: -5px;
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Pagination Styles */
+.pagination {
+    justify-content: center;
+}
+
+.pagination a {
+    color: #FF5722;
+}
+
+/* Miscellaneous Styles */
+.sidebar .menu-button {
+    color: white;
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.card-body a {
+    background-color: #FF5722;
+    border-color: #FF5722;
+}
+
+.yawa {
+    color: #FF5722;
+}
+
+.animal-toggle {
+    background-color: lightgrey;
+    border: none;
+    color: black;
+}
+
+/* Adjust the margin-top to avoid overflow */
+@media (max-width: 576px) {
+    .main-content h4 {
+        margin-top: 30px;
+        color: #FF5722;
+    }
+    .main-content .form {
+        margin-top: 30px;
+    }
+}
+
+.main-content {
+    padding-top: 20px; /* Adjust this value to avoid overflow issues */
+}
+
+@media (min-width: 576px) {
+    .main-content {
+        padding-top: 40px; /* More padding for larger screens */
+}
+}
+
+/* Modal Profile Update Styles */
+.modal-dialog {
+    max-width: 900px;
+}
+
+.modal-header {
+    background-color: #FF5722;
+    color: white;
+}
+
+.modal-header .btn-close {
+    background-color: white;
+    border: none;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.profile-sidebar {
+    height: 100%;
+    background-color: #f8f9fa;
+    color: #333;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.profile-sidebar .profile img {
+    border-radius: 50%;
+    margin-bottom: 10px;
+    height: 80px;
+    width: 80px;
+    object-fit: cover;
+}
+
+.profile-sidebar .profile p {
+    margin: 5px 0;
+    font-size: 15px;
+    text-align: center;
+    margin: 0;
+}
+
+.profile-sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0;
+}
+
+.profile-sidebar ul li {
+    padding: 10px 0;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.profile-sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.profile-sidebar ul li:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Form Styles */
+.modal-body form {
+    flex-grow: 1;
+}
+
+.modal-body form .form-label {
+    font-weight: bold;
+}
+
+.modal-body form .form-control {
+    border-radius: 4px;
+}
+
+.modal-body form .form-control[type="file"] {
+    padding: 5px;
+}
+
+#updateModal_imagePreview {
+    display: block;
+    margin-top: 10px;
+    max-width: 100px;
+}
+
+.btn-primary {
+    background-color: #FF5722;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #e64a19;
+}
+
+/* Hide text on small screens */
+@media (max-width: 992px) {
+    .navbar-nav .nav-item .nav-link span {
+        display: none; /* Hide the text */
+    }
+}
+
+/* Dropdown Position Fixes */
+.navbar-custom .dropdown-menu {
+    position: absolute; /* Ensure proper dropdown placement */
+    right: 0; /* Align dropdown to the right */
+    top: 100%; /* Position it directly below the parent */
+    margin-top: 0.5rem; /* Space between the icon and dropdown */
+    transform: none;
+}
+
+/* Sidebar hidden by default on mobile */
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%); /* Hide sidebar off-screen */
+        transition: transform 0.3s ease; /* Smooth transition for sidebar */
+    }
+
+    /* Sidebar will appear when toggled */
+    .sidebar.show {
+        transform: translateX(0); /* Bring sidebar into view */
+    }
+
+    .main-content {
+        margin-left: 0; /* Remove margin when sidebar is hidden */
+        width: 100%; /* Make the content take full width */
+    }
+}
+
+/* Style the Sort By icon button */
+.dropdown .btn-secondary {
+    background-color: transparent; /* Make it transparent if you want no background */
+    border: none; /* Remove border */
+    padding: 0; /* Remove padding */
+}
+
+.dropdown .btn-secondary i {
+    font-size: 1.5rem; /* Adjust the icon size */
+    color: #333; /* Icon color */
+}
+
+.dropdown .btn-secondary:hover i {
+    color: #FF5722; /* Change color on hover */
+}
+/* Sidebar hidden by default on mobile */
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%); /* Hide sidebar off-screen */
+        transition: transform 0.3s ease; /* Smooth transition for sidebar */
+    }
+
+    /* Sidebar will appear when toggled */
+    .sidebar.show {
+        transform: translateX(0); /* Bring sidebar into view */
+    }
+
+    .main-content {
+        margin-left: 0; /* Ensure the content stays in place */
+        width: 100%; /* Keep content full width even when sidebar is shown */
+        transition: none; /* Remove transition for main content */
+    }
+
+    /* Add this section to ensure main content doesn't shift */
+    .main-content.no-shift {
+        margin-left: 0 !important;
+        width: 100% !important;
+    }
+}

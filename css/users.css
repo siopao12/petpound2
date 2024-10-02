@@ -1,0 +1,299 @@
+body {
+    font-family: Arial, sans-serif;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    background-color: #f8f8f8;
+    height: 100vh; /* Full viewport height */
+    overflow-y: auto; /* Add vertical scrollbar to body */
+}
+
+.navbar-custom {
+    background-color: white;
+    z-index: 1000; /* Ensure navbar is above other content */
+    position: fixed; /* Make navbar fixed at the top */
+    width: 100%; /* Make navbar full width */
+    top: 0; /* Position it at the top */
+    border: 1px solid #ddd;
+}
+
+.navbar-custom .navbar-brand {
+    color: #FF5722;
+    font-weight: bold;
+}
+
+.navbar-custom .navbar-nav .nav-link {
+    color: #333;
+}
+
+.navbar-custom .form-control {
+    border-radius: 10px;
+}
+
+.navbar-custom .nav-item img {
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+}
+
+.navbar-custom .menu-button,
+.menu-icon .menu-button {
+    color: #333;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.input-group .search-form {
+    width: 20%;
+}
+
+@media (max-width: 300px) {
+    .search-form {
+        width: auto;
+        max-width: none;
+    }
+}
+
+/* Sidebar Styles */
+.sidebar {
+    position: fixed;
+    top: 56px; /* Adjust this to the height of your navbar */
+    height: calc(100vh - 56px); /* Full height minus navbar height */
+    width: 60px; /* Initial width for icons only */
+    left: 0;
+    background-color: #fff;
+    transition: width 0.3s;
+    overflow-x: hidden;
+    white-space: nowrap;
+    z-index: 999; /* Ensure sidebar is above other content */
+}
+
+.sidebar.expanded {
+    width: 250px; /* Expanded width */
+}
+
+.sidebar a {
+    padding: 15px;
+    text-align: left;
+    font-size: 18px;
+    display: block;
+    color: #000;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.sidebar a i {
+    min-width: 20px;
+    margin-right: 10px;
+}
+
+.sidebar a span {
+    display: none; /* Hide text initially */
+}
+
+.sidebar.expanded a span {
+    display: inline; /* Show text when expanded */
+}
+
+.sidebar a:hover {
+    background-color: #f1f1f1;
+}
+
+.sidebar .active {
+    background-color: #e7f3f9;
+}
+
+/* Main Content Styles */
+.main-content {
+    margin-top: 80px; /* Ensure main content starts below the navbar */
+    margin-left: 60px; /* Initial margin to account for sidebar */
+    transition: margin-left 0.3s, width 0.3s; /* Smooth transition for margin and width */
+    padding: 20px;
+    width: calc(100% - 60px); /* Full width minus sidebar */
+    overflow: hidden; /* Prevent horizontal overflow */
+}
+
+.main-content.shifted {
+    margin-left: 250px; /* Margin when sidebar is expanded */
+    width: calc(100% - 250px); /* Adjust width when sidebar is expanded */
+}
+
+/* Card Styles */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the cards horizontally */
+}
+
+.card {
+    margin: 10px;
+    margin-top: -5px;
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Pagination Styles */
+.pagination {
+    justify-content: center;
+}
+
+.pagination a {
+    color: #FF5722;
+}
+
+/* Miscellaneous Styles */
+.sidebar .menu-button {
+    color: white;
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.card-body a {
+    background-color: #FF5722;
+    border-color: #FF5722;
+}
+
+.yawa {
+    color: #FF5722;
+}
+
+.animal-toggle {
+    background-color: lightgrey;
+    border: none;
+    color: black;
+}
+
+/* Modal Profile Update Styles */
+.modal-dialog {
+    max-width: 900px;
+}
+
+.modal-header {
+    background-color: #FF5722;
+    color: white;
+}
+
+.modal-header .btn-close {
+    background-color: white;
+    border: none;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.profile-sidebar {
+    height: 100%;
+    background-color: #f8f9fa;
+    color: #333;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.profile-sidebar .profile img {
+    border-radius: 50%;
+    margin-bottom: 10px;
+    height: 80px;
+    width: 80px;
+    object-fit: cover;
+}
+
+.profile-sidebar .profile p {
+    margin: 5px 0;
+    font-size: 15px;
+    text-align: center;
+    margin: 0;
+}
+
+.profile-sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0;
+}
+
+.profile-sidebar ul li {
+    padding: 10px 0;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.profile-sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.profile-sidebar ul li:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Form Styles */
+.modal-body form {
+    flex-grow: 1;
+}
+
+.modal-body form .form-label {
+    font-weight: bold;
+}
+
+.modal-body form .form-control {
+    border-radius: 4px;
+}
+
+.modal-body form .form-control[type="file"] {
+    padding: 5px;
+}
+
+#updateModal_imagePreview {
+    display: block;
+    margin-top: 10px;
+    max-width: 100px;
+}
+
+.btn-primary {
+    background-color: #FF5722;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #e64a19;
+}
+
+/* Toggle */
+.custom-toggler {
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.custom-toggler-icon {
+    background-image: url('images/dropdown.png'); /* Use a custom icon image */
+    width: 30px;
+    height: 30px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: transform 0.3s ease-in-out;
+}
+
+.navbar-toggler.collapsed .custom-toggler-icon {
+    transform: rotate(0deg);
+}
+
+.navbar-toggler:not(.collapsed) .custom-toggler-icon {
+    transform: rotate(90deg);
+}
+
+.navbar-toggler:hover, .navbar-toggler:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}

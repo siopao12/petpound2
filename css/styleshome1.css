@@ -1,0 +1,120 @@
+header {
+    border-bottom: 2px solid #f3f3f3; 
+}
+
+.navbar.bg-body-tertiary {
+    background-color: transparent !important;
+}
+
+.sidebar {
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding-top: 60px;
+    border-right: 1px solid #ddd;
+    transition: transform 0.3s ease-in-out;
+}
+
+.sidebar.collapsed {
+    transform: translateX(-100%);
+}
+
+.sidebar img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+.sidebar a {
+    display: block;
+    padding: 10px;
+    color: #000;
+    text-decoration: none;
+}
+
+.sidebar a:hover {
+    background-color: #f1f1f1;
+}
+
+.sidebar-toggle {
+    background: none;
+    border: none;
+    outline: none;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1000;
+}
+
+.search-bar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    color: #34f199;
+}
+
+.search-bar-container input {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.search-elements {
+    display: flex;
+    align-items: center;
+  }
+  .form-control {
+    margin-right: 10px; 
+  }
+  
+  .filter-container {
+    margin-left: auto; 
+  }
+
+.filter-dropdown {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.tab-menu {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.tab-menu a {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    color: black; /* Default color */
+    font-size: 16px; /* Default size */
+}
+
+.tab-menu a img {
+    margin-right: 8px;
+    height: 24px; /* Adjust the size as needed */
+}
+
+.tab-menu a:hover {
+    color: #34f199; /* Change color on hover */
+}
+
+.tab-menu a.active {
+    color: #34f199; /* Active color */
+    border-bottom: 2px solid #34f199; /* Active underline */
+}
+.btn {
+    padding-left: 10px;
+    height: 47px;
+}
+.filter-container{
+    margin-right: 100px;
+}

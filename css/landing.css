@@ -1,0 +1,562 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+header {
+    background-color: #ffffff;
+    padding: 5px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Navbar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.navbar-nav {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    justify-content: center; /* Center the navbar items */
+    width: 100%; /* Ensure it takes the full width to center items */
+}
+
+.nav-item {
+    margin: 0 5px;
+    position: relative;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #333;
+    padding: 5px 0;
+}
+
+.nav-link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #f95335;
+    transition: width 0.3s;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.navbar-toggler {
+    border: none;
+    background-color: transparent;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.collapse.navbar-collapse {
+    justify-content: center;
+}
+
+.btn-primary {
+    background-color: #ff5a00;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    margin-left: auto; /* Ensures the button stays on the right */
+}
+
+.intro {
+    text-align: center;
+    padding: 5px 2px;
+    background-color: #fff;
+}
+
+.intro h1 {
+    color: #f95335;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.intro p {
+    font-size: 16px;
+    color: #555;
+}
+
+/* Services Section */
+.services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px 0;
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 30%;
+    margin-bottom: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.service img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.service-content {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.service-content h2 {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.service-content p {
+    font-size: 16px;
+    margin: 10px 5px;
+    color: white;
+}
+
+.btn {
+    background-color: #ff5a00;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Report Section */
+.report-section {
+    position: relative;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 1200px;
+}
+
+.report-image {
+    position: relative;
+    width: 100%;
+}
+
+.report-image img {
+    width: 100%;
+    height: auto;
+}
+
+.report-content {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.report-content h2 {
+    color: white;
+    font-size: 24px;
+    margin: 0;
+}
+
+.report-content p {
+    font-size: 16px;
+    margin: 10px 0;
+    color: white;
+}
+
+.report-content .btn {
+    background-color: #ff5a00;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Steps Section */
+.steps {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 82%;
+    max-width: 1200px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.step {
+    flex: 0 1 22%;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 29px;
+    width: 100%;
+    max-width: 29%;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.step img {
+    width: 50px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.step h3 {
+    font-size: 18px;
+    color: #f95335;
+    margin-bottom: 10px;
+}
+
+.step p {
+    font-size: 14px;
+    color: #555;
+    text-align: left;
+    margin: 0;
+}
+
+/* Footer */
+footer {
+    background-color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    border-top: 1px solid #ccc;
+}
+
+footer p {
+    margin: 0;
+    color: #555;
+    font-size: 14px;
+}
+
+/* Modal content adjustments */
+.modal-content {
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.signup-form .input-group {
+    margin-bottom: 20px;
+}
+
+.signup-form .input-group input {
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.signup-form .input-group .toggle-password {
+    cursor: pointer;
+    padding: 10px;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-radius: 0 4px 4px 0;
+    margin-left: -1px;
+}
+
+.signup-form .options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.signup-form .options label {
+    display: flex;
+    align-items: center;
+}
+
+.signup-form .options label input {
+    margin-right: 10px;
+}
+
+.signup-form .forgot-password {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.signup-form .forgot-password:hover {
+    text-decoration: underline;
+}
+
+.signup-form .btn {
+    background-color: #ff5a00;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.signup-form .create-account {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.signup-form .create-account a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.signup-form .create-account a:hover {
+    text-decoration: underline;
+}
+
+.modal-body {
+    width: 100%;
+    padding: 0;
+    max-width: 500px;
+    margin-top: 20px;
+}
+
+.modal-body h2 {
+    font-size: 4vh;
+    font-weight: 100;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 992px) {
+    nav {
+        justify-content: center;
+    }
+
+    .services, .steps {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service, .step {
+        width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .services, .steps {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .service, .step {
+        width: 90%;
+        max-width: none;
+    }
+
+    .service-content, .report-content {
+        padding: 15px;
+    }
+
+    .step h3 {
+        font-size: 16px;
+    }
+
+    .step p {
+        font-size: 12px;
+        text-align: center;
+    }
+
+    /* Mobile Responsiveness for Report Section */
+    .report-content {
+        position: static;
+        transform: none;
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.8);
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    .report-content h2 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .report-content p {
+        font-size: 14px;
+    }
+
+    .report-content .btn {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-nav {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        text-align: center;
+    }
+
+    .navbar-nav .nav-item {
+        margin: 5px 0;
+    }
+
+    .intro h1 {
+        font-size: 24px;
+    }
+
+    .intro p {
+        font-size: 14px;
+    }
+
+    .service-content h2, .report-content h2 {
+        font-size: 20px;
+    }
+
+    .service-content p, .report-content p {
+        font-size: 14px;
+    }
+
+    .steps {
+        padding: 10px 0;
+    }
+
+    .step {
+        padding: 20px 10px;
+    }
+
+    .step h3 {
+        font-size: 16px;
+    }
+
+    .step p {
+        font-size: 12px;
+    }
+
+    .modal-dialog {
+        max-width: 90%;
+        margin: 20px auto;
+    }
+    
+    .modal-content {
+        padding: 10px;
+    }
+
+    .modal-header h1 {
+        font-size: 18px;
+    }
+
+    .modal-body {
+        padding: 0;
+        font-size: 14px;
+    }
+
+    .signup-form .input-group input {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .signup-form .btn {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .signup-form .options {
+        font-size: 12px;
+    }
+
+    .signup-form .create-account a {
+        font-size: 12px;
+    }
+
+    .modal-body h2 {
+        font-size: 16px;
+    }
+
+    .form-check-label {
+        font-size: 12px;
+    }
+
+    .forgot-password {
+        font-size: 12px;
+    }
+
+    .row {
+        flex-direction: column;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .col-md-6 {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .position-relative .form-control {
+        padding-right: 45px; /* Adjust padding to accommodate the toggle icon */
+    }
+
+    .position-relative .fa-eye-slash {
+        right: 10px;
+    }
+
+    .w-100 {
+        width: 100%;
+    }
+
+    .form-row {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .btn-primary {
+        font-size: 16px;
+        padding: 10px;
+        display: block;
+        margin: 0 auto; /* Center the button */
+        text-align: center;
+    }
+
+    .text-center {
+        margin-left: 0;
+    }
+}
