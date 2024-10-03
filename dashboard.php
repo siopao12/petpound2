@@ -375,24 +375,17 @@ $stmt->close();
 <script>
 // Sidebar toggle
 document.getElementById("sidebar-toggle").addEventListener("click", function() {
-    document.getElementById("mySidebar").classList.toggle("show");
-    
-    
+    const sidebar = document.getElementById("mySidebar");
+    sidebar.classList.toggle("show"); // Toggle showing the sidebar
 
     // Apply shifting only on screens larger than 768px
     if (window.innerWidth > 768) {
-        document.getElementById("mySidebar").classList.toggle("expanded");
+        sidebar.classList.toggle("expanded");
         document.getElementById("main-content").classList.toggle("shifted");
+    } else {
+        sidebar.classList.toggle("expanded"); // Show the expanded sidebar on mobile too
     }
-    document.querySelectorAll('.sidebar a').forEach(link => {
-    link.addEventListener('click', function() {
-        // Toggle the show-text class to display the text when icon is clicked
-        this.closest('.sidebar').classList.toggle('show-text');
-    });
 });
-});
-
-
     // Profile picture preview
     function updateModal_previewImage(event) {
         var reader = new FileReader();

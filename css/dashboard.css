@@ -1,3 +1,4 @@
+/* Global styles */
 body {
     font-family: Arial, sans-serif;
     overflow-x: hidden; /* Prevent horizontal overflow */
@@ -110,7 +111,7 @@ body {
 @media (min-width: 576px) {
     .main-content {
         padding-top: 40px; /* More padding for larger screens */
-}
+    }
 }
 
 .input-group .search-form {
@@ -222,21 +223,34 @@ body {
     width: calc(100% - 250px); /* Adjust width when sidebar is expanded */
 }
 
-/* Sidebar hidden by default on mobile */
+/* Sidebar styles for mobile */
 @media (max-width: 768px) {
     .sidebar {
         transform: translateX(-100%); /* Hide sidebar off-screen */
         transition: transform 0.3s ease; /* Smooth transition for sidebar */
+        width: 55px; /* Default small width */
     }
 
-    /* Sidebar will appear when toggled */
     .sidebar.show {
-        transform: translateX(0); /* Bring sidebar into view */
+        transform: translateX(0); /* Show sidebar on toggle */
+        width: 250px; /* Expanded width on toggle */
     }
 
+    /* Show both icons and text when sidebar is toggled */
+    .sidebar.show a span {
+        display: inline; /* Show text when sidebar is visible */
+    }
+
+    /* Ensure the main content takes full width when sidebar is toggled */
     .main-content {
-        margin-left: 0; /* Remove margin when sidebar is hidden */
-        width: 100%; /* Make the content take full width */
+        margin-left: 0;
+        width: 100%; /* Full width when sidebar is hidden */
+    }
+
+    /* Keep content full width even when sidebar is shown */
+    .main-content.no-shift {
+        margin-left: 0 !important;
+        width: 100% !important;
     }
 }
 
@@ -317,7 +331,7 @@ body {
 @media (min-width: 576px) {
     .main-content {
         padding-top: 40px; /* More padding for larger screens */
-}
+    }
 }
 
 /* Modal Profile Update Styles */
@@ -447,8 +461,15 @@ body {
     }
 
     .main-content {
-        margin-left: 0; /* Remove margin when sidebar is hidden */
-        width: 100%; /* Make the content take full width */
+        margin-left: 0; /* Ensure the content stays in place */
+        width: 100%; /* Keep content full width even when sidebar is shown */
+        transition: none; /* Remove transition for main content */
+    }
+
+    /* Add this section to ensure main content doesn't shift */
+    .main-content.no-shift {
+        margin-left: 0 !important;
+        width: 100% !important;
     }
 }
 
@@ -466,28 +487,4 @@ body {
 
 .dropdown .btn-secondary:hover i {
     color: #FF5722; /* Change color on hover */
-}
-/* Sidebar hidden by default on mobile */
-@media (max-width: 768px) {
-    .sidebar {
-        transform: translateX(-100%); /* Hide sidebar off-screen */
-        transition: transform 0.3s ease; /* Smooth transition for sidebar */
-    }
-
-    /* Sidebar will appear when toggled */
-    .sidebar.show {
-        transform: translateX(0); /* Bring sidebar into view */
-    }
-
-    .main-content {
-        margin-left: 0; /* Ensure the content stays in place */
-        width: 100%; /* Keep content full width even when sidebar is shown */
-        transition: none; /* Remove transition for main content */
-    }
-
-    /* Add this section to ensure main content doesn't shift */
-    .main-content.no-shift {
-        margin-left: 0 !important;
-        width: 100% !important;
-    }
 }
